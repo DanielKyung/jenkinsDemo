@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     if (ENVIRONMENT_NAME == 'date') {
-                        ENV_NAME = $(date "+%Y%m%d%H%M%S")
+                        ENV_NAME = $(date '+%Y%m%d%H%M%S')
                     }
                 }
                 echo ${ENV_NAME}
