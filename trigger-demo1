@@ -1,2 +1,1 @@
-timestamp='date +%Y%m%d%H%M'
-echo "$timestamp"
+echo "data now : $(date +%Y)-$(date +%m)-$(date +%d) $(date +%H):$(date +%M):$(date +%S)"
