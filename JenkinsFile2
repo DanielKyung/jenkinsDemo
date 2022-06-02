@@ -13,10 +13,10 @@ pipeline {
             steps {
                 script {
                     if (ENVIRONMENT_NAME == 'date') {
-                        ENV_NAME = "data now : $(date +%Y)-$(date +%m)-$(date +%d) $(date +%H):$(date +%M):$(date +%S)"
+                        ENV_NAME = $(date "+%Y%m%d%H%M%S")
                     }
                 }
-                echo ENV_NAME
+                echo ${ENV_NAME}
             }
         }
         stage('Deploy') {
