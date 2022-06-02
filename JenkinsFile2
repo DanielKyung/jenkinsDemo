@@ -4,7 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "data now : $(date +%Y)-$(date +%m)-$(date +%d) $(date +%H):$(date +%M):$(date +%S)"
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                build 'gitDemo1'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
