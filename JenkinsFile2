@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bash 'date now : $(date +%Y)-$(date +%m)-$(date +%d) $(date +%H):$(date +%M):$(date +%S)'
+                bash trigger-demo1
             }
         }
         stage('Deploy') {
