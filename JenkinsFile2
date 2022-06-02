@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bash trigger-demo1
+                build 'trigger-demo1'
             }
         }
         stage('Deploy') {
