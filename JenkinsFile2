@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        ENV_NAME = '"data now : $(date +%Y)-$(date +%m)-$(date +%d) $(date +%H):$(date +%M):$(date +%S)"'
+        ENV_NAME = 'date'
     }
     stages {
         stage('Build') {
@@ -11,6 +11,11 @@ pipeline {
         }
         stage('Test') {
             steps {
+                script {
+                    if (ENVIRONMENT_NAME == 'date') {
+                        ENV_NAME = "data now : $(date +%Y)-$(date +%m)-$(date +%d) $(date +%H):$(date +%M):$(date +%S)"
+                    }
+                }
                 echo ENV_NAME
             }
         }
