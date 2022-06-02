@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                NowDate='date'
+                echo NowDate='date'
                 echo $NowDate
             }
         }
